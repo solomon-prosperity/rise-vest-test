@@ -1,9 +1,5 @@
 import Application from "./usecases/application";
 import container from "./container";
-// import express from 'express'
-// const a = express()
-// import cors from 'cors'
-// a.use(cors())
 
 export const app = new Application(container.cradle);
 

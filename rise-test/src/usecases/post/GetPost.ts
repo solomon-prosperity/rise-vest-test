@@ -31,7 +31,7 @@ class GetPost {
           [postId]
         );
 
-        resolve(rows);
+        resolve(rows[0]);
       } catch (error) {
         reject(error);
       }

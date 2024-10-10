@@ -63,18 +63,6 @@ class UserRepository extends BaseRepository {
     LIMIT 3;
     `;
   }
-
-  //   updatePost(): string[] {
-  //     return [
-  //       `update ${this.table} set title = $1,post = $2 ,updated_on = NOW() where ${this.tableId} = $3 returning *;`,
-  //       `update ${this.table} set post = $1 ,updated_on = NOW() where ${this.tableId} = $2 returning *;`,
-  //       `update ${this.table} set title = $1 ,updated_on = NOW() where ${this.tableId} = $2 returning *;`,
-  //     ];
-  //   }
-
-  //   deleteComment(): string {
-  //     return this.getByColThenDelete()(this.tableId);
-  //   }
 }
 
 export default UserRepository;

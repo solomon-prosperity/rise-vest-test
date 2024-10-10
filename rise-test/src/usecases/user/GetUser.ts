@@ -31,7 +31,7 @@ class GetUser {
           [userId]
         );
         if (rows.length == 0) throw new NotFoundError("user not found");
-        resolve(rows);
+        resolve(rows[0]);
       } catch (error) {
         reject(error);
       }

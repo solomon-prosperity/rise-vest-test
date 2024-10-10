@@ -1,10 +1,8 @@
 import PostRepository from "../../infra/repository/PostRepository";
 import { PoolClient, QueryResult } from "pg";
 import Config from "../../../config/default";
-import {
-  validatePostPayload,
-  Post,
-} from "../../interface/http/validations/blog.validations.schema";
+import { validatePostPayload } from "../../interface/http/validations/blog.validations.schema";
+import { Post } from "../../infra/support/interfaces";
 import { ValidationResult } from "joi";
 import BadRequestError from "../../interface/http/errors/BadRequest";
 
@@ -41,7 +39,7 @@ class CreatePost {
           [userId, post]
         );
 
-        resolve(rows);
+        resolve(rows[0]);
       } catch (error) {
         reject(error);
       }

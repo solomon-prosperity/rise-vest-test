@@ -3,6 +3,7 @@ import routerV1 from "./v1";
 import { Request, Response } from "express";
 import cors from "cors";
 import { AwilixContainer } from "awilix";
+import error from "../middlewares/error";
 
 interface AppAwilixContainer extends AwilixContainer {
   containerMiddleware: string | RegExp | Array<string | RegExp>;
@@ -22,6 +23,8 @@ export default ({ containerMiddleware }: AppAwilixContainer) => {
   });
 
   apiRouter.use("/v1", cors(), routerV1);
+  // handle errors (404 is not technically an error)
+  apiRouter.use(error);
 
   return apiRouter;
 };

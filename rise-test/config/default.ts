@@ -10,6 +10,7 @@ interface AppConfig {
   psqlPort: string | undefined;
   psqlHost: string | undefined;
   psqlDatabaseName: string | undefined;
+  psqlTestDatabaseName: string | undefined;
   psqlUsername: string | undefined;
   psqlPassword: string | undefined;
   psqlDatabaseUri: string | undefined;
@@ -27,6 +28,7 @@ const config: AppConfig = {
   psqlPort: process.env.PSQL_DATABASE_PORT,
   psqlHost: process.env.PSQL_DATABASE_HOST,
   psqlDatabaseName: process.env.PSQL_DATABASE_NAME,
+  psqlTestDatabaseName: process.env.PSQL_TEST_DATABASE_NAME,
   psqlUsername: process.env.PSQL_DATABASE_USER,
   psqlPassword: process.env.PSQL_DATABASE_PASSWORD,
   psqlDatabaseUri: process.env.PSQL_DATABASE_URI,

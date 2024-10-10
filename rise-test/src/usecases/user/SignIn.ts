@@ -5,10 +5,8 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import BadRequestError from "../../interface/http/errors/BadRequest";
 import UnauthorizedError from "../../interface/http/errors/Unauthorized";
-import {
-  validateAuthPayload,
-  Auth,
-} from "../../interface/http/validations/blog.validations.schema";
+import { validateAuthPayload } from "../../interface/http/validations/blog.validations.schema";
+import { Auth } from "../../infra/support/interfaces";
 import { ValidationResult } from "joi";
 
 class SignIn {

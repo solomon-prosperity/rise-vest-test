@@ -31,7 +31,12 @@ class Application {
     container.register({
       psqlClient: asValue(psqlClient),
     });
-    await this.restServer.start();
+    const server = await this.restServer.start();
+    return { server, psqlClient };
+  }
+
+  async close() {
+    await this.restServer.stop();
   }
 }
 

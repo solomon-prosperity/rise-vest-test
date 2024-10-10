@@ -1,10 +1,8 @@
 import CommentRepository from "../../infra/repository/CommentRepository";
 import { PoolClient, QueryResult } from "pg";
 import Config from "../../../config/default";
-import {
-  validateCommentPayload,
-  Comment,
-} from "../../interface/http/validations/blog.validations.schema";
+import { validateCommentPayload } from "../../interface/http/validations/blog.validations.schema";
+import { Comment } from "../../infra/support/interfaces";
 import { ValidationResult } from "joi";
 import BadRequestError from "../../interface/http/errors/BadRequest";
 

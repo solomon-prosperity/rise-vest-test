@@ -25,7 +25,6 @@ class ResponseManager {
         ResponseManager.respondWithSuccess(res, code, data, message);
       },
       onError: (errorName: string, errorCode: number, errorMessage: string, data: object) => {
-        console.log({ errorCode });
         ResponseManager.respondWithError(res, errorName, errorCode, errorMessage, data);
       },
     };

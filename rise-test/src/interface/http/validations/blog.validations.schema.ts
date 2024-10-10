@@ -1,29 +1,6 @@
 import Joi from "joi";
 import { ValidationResult } from "joi";
-
-export interface User {
-  first_name: string;
-  last_name: string;
-  gender: string;
-  email: string;
-  password: string;
-}
-
-export interface Post {
-  post: string;
-  userId?: string;
-}
-
-export interface Comment {
-  comment: string;
-  userId?: string;
-  postId?: string;
-}
-
-export interface Auth {
-  email: string;
-  password: string;
-}
+import { User, Post, Auth, Comment } from "../../../infra/support/interfaces";
 
 // validation for user signUp
 export const validateUserPayload = async (user: User): Promise<ValidationResult> => {

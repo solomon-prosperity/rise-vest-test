@@ -45,6 +45,23 @@ class Server {
       }
     });
   }
+
+  stop() {
+    return new Promise((resolve, reject) => {
+      if (this.express.server) {
+        this.express.server.close((err?: Error) => {
+          if (err) {
+            this.logger.error("Error stopping the server:", err);
+            return reject(err);
+          }
+          resolve(true);
+        });
+      } else {
+        this.logger.warn("Server is not running.");
+        resolve(false);
+      }
+    });
+  }
 }
 
 export default Server;

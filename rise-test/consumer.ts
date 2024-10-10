@@ -9,9 +9,6 @@
 //     logger: logging,
 //   } = container.cradle;
 
-
-
-
 //   const logger = {
 //     info: console.info,
 //     error: console.error,
@@ -22,10 +19,8 @@
 // //logger.info("Connecting to RabbitMq...");
 // const connection = amqp.connect(amqp_url);
 
-
 // connection.on("connect", () => logger.info("RabbitMq is connected!"));
 // connection.on("disconnect", () => logger.info("RabbitMq disconnected. Retrying..."));
-
 
 // // Create a channel wrapper
 // const channelWrapper = connection.createChannel({
@@ -34,14 +29,12 @@
 //         //Assert Queues
 //         channel.assertQueue(`order_completed`, { durable: false })
 
-
 //         //consume messages
-        
 
 //         channel.consume(`order_completed`, async (messageBuffer: Message | null) => {
 //                 const msg = messageBuffer;
 //                 const message = JSON.parse(msg!.content.toString());
-                
+
 //                 message.order.products.map(async (item: any)=> {
 //                     const merchantId = item.merchantId
 //                     let merchant = await MerchantModel.findOne({_id: merchantId})
@@ -49,11 +42,9 @@
 //                     merchant!.accountBalance = funds
 //                     merchant!.save()
 //                     console.log(`Merchant Account Balance updated \n ${merchant}`)
-                    
+
 //                 })
 
-                
-            
 //         }, {noAck: true})
 
 //     }
@@ -62,6 +53,5 @@
 // channelWrapper.on("close", () => {
 //     logger.info("RabbitMq channel has closed");
 // });
-
 
 // export default channelWrapper

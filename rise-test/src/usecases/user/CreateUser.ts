@@ -2,10 +2,8 @@
 import UserRepository from "../../infra/repository/UserRepository";
 import { PoolClient, QueryResult } from "pg";
 import Config from "../../../config/default";
-import {
-  validateUserPayload,
-  User,
-} from "../../interface/http/validations/blog.validations.schema";
+import { validateUserPayload } from "../../interface/http/validations/blog.validations.schema";
+import { User } from "../../infra/support/interfaces";
 import { ValidationResult } from "joi";
 import BadRequestError from "../../interface/http/errors/BadRequest";
 import ConflictError from "../../interface/http/errors/Conflict";

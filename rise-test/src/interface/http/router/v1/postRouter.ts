@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post("/", verifyToken, api("create"));
 router.get("/:postId", verifyToken, api("get"));
-router.get("/user/:userId", verifyToken, api("getAllUserPosts"));
+router.get("/users/:userId", verifyToken, api("getAllUserPosts"));
 router.get("/", verifyToken, api("getAllPosts"));
 router.post("/:postId/comments", verifyToken, api("addComment"));
 router.get("/:postId/comments", verifyToken, api("getAllPostComments"));
