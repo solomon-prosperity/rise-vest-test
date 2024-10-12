@@ -50,7 +50,7 @@ describe("POST /v1/users", () => {
     it("should return a conflict error", async () => {
       // create user first
       await request(server).post("/v1/users").send(newUser);
-      const response = await request("localhost:40121").post("/v1/users").send(newUser).expect(409);
+      const response = await request(server).post("/v1/users").send(newUser).expect(409);
       expect(response.body.success).to.equal(false);
     });
   });
