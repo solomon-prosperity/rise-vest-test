@@ -1,7 +1,7 @@
 import UserRepository from "../../infra/repository/UserRepository";
 import { PoolClient, QueryResult } from "pg";
 import Config from "../../../config/default";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import BadRequestError from "../../interface/http/errors/BadRequest";
 import UnauthorizedError from "../../interface/http/errors/Unauthorized";

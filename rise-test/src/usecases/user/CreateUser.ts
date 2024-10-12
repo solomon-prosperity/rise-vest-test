@@ -7,7 +7,7 @@ import { User } from "../../infra/support/interfaces";
 import { ValidationResult } from "joi";
 import BadRequestError from "../../interface/http/errors/BadRequest";
 import ConflictError from "../../interface/http/errors/Conflict";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 class CreateUser {
   userRepository: UserRepository;

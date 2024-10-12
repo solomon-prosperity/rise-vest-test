@@ -17,7 +17,7 @@
     "auto-bind-inheritance": "^1.0.6",
     "awilix": "^6.0.0",
     "awilix-express": "^6.0.0",
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "chai": "^4.3.4",
     "config": "^3.3.7",
     "cors": "^2.8.5",
@@ -42,6 +42,7 @@
   "devDependencies": {
     "@types/amqplib": "^0.8.2",
     "@types/bcrypt": "^5.0.0",
+    "@types/bcryptjs": "^2.4.6",
     "@types/body-parser": "^1.19.2",
     "@types/chai": "^4.3.5",
     "@types/config": "^0.0.41",

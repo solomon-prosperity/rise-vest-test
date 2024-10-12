@@ -1,16 +1,36 @@
 
-FROM node:18-slim
+FROM node:20.17.0-alpine as base
+
+FROM base as builder
+
+# deps for post-install scripts
+RUN apk add --update --no-cache \
+    python3 \
+    make \
+    git \
+    g++
 
 WORKDIR /usr/src/app
 
 COPY package.json ./
+COPY yarn.lock ./
+
 
 RUN yarn install
 
+FROM base
+
+WORKDIR /usr/src/app
+
+COPY --from=builder /usr/src/app/node_modules ./node_modules
+
 COPY . .
 
-RUN NODE_ENV=production yarn build
+ARG NODE_ENV=production 
+ENV NODE_ENV=${NODE_ENV}
 
-EXPOSE 30029 30030
+RUN yarn build
+
+EXPOSE 30029
 
 CMD [ "node", "build/src/start.js" ]
